@@ -1,11 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 import userService from "../utils/userService";
 
@@ -13,43 +11,28 @@ var Filter = require("bad-words"),
   filter = new Filter();
 
 class SignupPage extends React.Component {
-  state = {
-    displayName: "",
-    email: "",
-    password: "",
-    passConf: "",
+    state = {
+        displayName: '',
+        email: '',
+        password: '',
+        passConf: '',
 
-    isDisplayNameValid: false,
-    isEmailValid: false,
-    isPasswordValid: false,
-    isPassConfValid: false,
+        isDisplayNameValid: false,
+        isEmailValid: false,
+        isPasswordValid: false,
+        isPassConfValid: false,
 
-    displayNameFeedback: null,
-    emailFeedback: null,
-    passwordFeedback: null,
-    passConfFeedback: null
-  };
+        displayNameFeedback: null,
+        emailFeedback: null,
+        passwordFeedback: null,
+        passConfFeedback: null,
+    };
 
-  handleChange = e => {
-    let field = e.target.name;
-    this.setState({
-      [field]: e.target.value
-    });
 
-    field = field.charAt(0).toUpperCase() + field.slice(1);
-    this["validate" + field](e);
-  };
-
-  validateFields = () => {
-    Object.keys(this.state)
-      .filter(attr => attr.match(/^is.*Valid$/))
-      .forEach(attr => {
-        let field = attr.replace("is", "").replace("Valid", "");
-        this["validate" + field]({
-          target: document.getElementById(
-            field.charAt(0).toLowerCase() + field.slice(1)
-          ),
-          type: "submit"
+    handleChange = e => {
+        let field = e.target.name;
+        this.setState({
+            [field]: e.target.value
         });
       });
   };
@@ -70,46 +53,39 @@ class SignupPage extends React.Component {
     field = field.charAt(0).toUpperCase() + field.slice(1);
 
     this.setState({
-      [e.target.name + "Feedback"]: feedback,
-      ["is" + field + "Valid"]: isNameValid
-    });
-  };
-
-  validateFirstName = this.validateName;
-  validateLastName = this.validateName;
-
-  validateDisplayName = e => {
-    let displayName = e.target.value;
-    let re = /^[A-Za-z]+[A-Za-z\d_ ]*[A-Za-z\d]$/;
-    let feedback = Feedback["displayName"][0];
-    let isFieldValid = true;
-
-    if (displayName === "" && e.type !== "change") {
-      if (this.state.firstName && this.state.lastName) {
-        this.setState({
-          displayName: this.state.firstName + " " + this.state.lastName
+            [e.target.name + 'Feedback']: feedback,
+            ['is' + field + 'Valid']: isNameValid
         });
-      } else {
-        feedback = Feedback["displayName"][1];
-        isFieldValid = false;
-      }
-    } else if (displayName.length < 2) {
-      feedback = Feedback["displayName"][2];
-      isFieldValid = false;
-    } else if (!displayName.match(re)) {
-      feedback = Feedback["displayName"][3];
-      isFieldValid = false;
-    } else if (filter.isProfane(displayName)) {
-      feedback = Feedback["displayName"][4];
-      isFieldValid = false;
-    }
+    };
 
-    this.setState({
-      displayNameFeedback: feedback,
-      isDisplayNameValid: isFieldValid
-    });
-  };
 
+    validateDisplayName = e => {
+        let displayName = e.target.value;
+        let re = /^[A-Za-z]+[A-Za-z\d_ ]*[A-Za-z\d]$/;
+        let feedback = Feedback['displayName'][0];
+        let isFieldValid = true;
+
+        if (displayName === '' && e.type !== 'change') {
+            if (this.state.firstName && this.state.lastName) {
+                this.setState({ displayName: this.state.firstName + ' ' + this.state.lastName });
+            } else {
+                feedback = Feedback['displayName'][1];
+                isFieldValid = false;
+            }
+        }
+        else if (displayName.length < 2) {
+            feedback = Feedback['displayName'][2];
+            isFieldValid = false;
+        }
+        else if (!displayName.match(re)) {
+            feedback = Feedback['displayName'][3];
+            isFieldValid = false;
+        }
+        else if (filter.isProfane(displayName)) {
+            feedback = Feedback['displayName'][4];
+            isFieldValid = false;
+        }
+      
   validateEmail = e => {
     let email = e.target.value;
     let re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+edu/;
@@ -150,6 +126,15 @@ class SignupPage extends React.Component {
       charReq: true
     };
 
+    getPasswordFeedback = (fbs) => {
+        fbs = fbs.split('|');
+        fbs.pop();
+        return <ul>
+            {fbs.map(fb =>
+                <li key={fb.toString()}>{fb}</li>
+            )}
+        </ul>;
+
     if (password === "") {
       feedback = Feedback["password"][1];
       isFieldValid = false;
@@ -174,6 +159,7 @@ class SignupPage extends React.Component {
         if (fbs.includes("charReq")) fb += Feedback["password"][4] + "|";
         if (fbs !== "") feedback = this.getPasswordFeedback(fb);
       }
+
     }
 
     this.setState({
@@ -198,6 +184,50 @@ class SignupPage extends React.Component {
       isFieldValid = false;
     }
 
+    render() {
+        return <div>
+            <Link to='/'> back arrow </Link>
+
+            {this.props.user ?
+                <Container>
+                    <Card>
+                        TODO add a list of interests here and a next button to continue to events page
+                        Place to list and interests
+                   <Link to='/events'> arrow to see events </Link>
+                    </Card>
+                </Container>
+
+                :
+                <Container
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Card>
+                        <Card.Body>
+                            <Form
+                                autoComplete='off'
+                                onSubmit={this.handleSubmit}
+                            >
+                                <this.ControlGroup id="displayName" labelText="Username " />
+                                <this.ControlGroup id="email" labelText="College Email" />
+                                <this.ControlGroup id="password" labelText="Password" type="password" />
+                                <this.ControlGroup id="passConf" labelText="Confirm Password" type="password" />
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'row-reverse',
+                                }}>
+                                    <Button variant="outline-success" onClick={this.handleSubmit}>Submit</Button>
+                                </div>
+
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Container>
+            }
+        </div>
     this.setState({
       passConfFeedback: feedback,
       isPassConfValid: isFieldValid

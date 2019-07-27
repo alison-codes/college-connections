@@ -7,7 +7,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import userService from "./utils/userService";
 
@@ -29,7 +29,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar />
+          <NavBar 
+          user={this.state.user}/>
           {/* TODO add back logo if necessary <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
         <main>
@@ -47,9 +48,7 @@ class App extends Component {
           </Switch>
           Main App
         </main>
-        <footer className="Footer">
-          Made with 💙 for LNKD by Macie, Ali, Chris, and Yang x 2
-        </footer>
+        <footer className="Footer">Made with <span role="img" aria-label="heart">💙</span> for LNKD by Macie, Ali, Chris, and Yang x 2</footer>
       </div>
     );
   }
