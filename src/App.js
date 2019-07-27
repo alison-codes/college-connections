@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import SignupPage from "./pages/SignupPage";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import userService from "./utils/userService";
+import LoginPage from "./pages/LoginPage";
 
 class App extends Component {
   state = {
@@ -30,7 +31,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <NavBar 
-          user={this.state.user}/>
+          user={this.state.user}
+          handleLogout={this.handleLogout} />
           {/* TODO add back logo if necessary <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
         <main>
@@ -44,6 +46,16 @@ class App extends Component {
                   handleSignupOrLogin={this.handleSignupOrLogin}
                 />
               )}
+            />
+            <Route
+            exact
+            path="/login"
+            render={props => (
+              <LoginPage
+              {...props}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            )}
             />
           </Switch>
         </main>

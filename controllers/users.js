@@ -10,6 +10,7 @@ module.exports = {
 };
 
 async function login(req, res) {
+  console.log(req.body);
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user) return res.status(401).json({ err: "bad credentials" });

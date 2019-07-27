@@ -3,22 +3,9 @@ const Schema = mongoose.Schema;
 
 const reactionSchema = new Schema(
   {
-    type: {
-      type: String,
-      required: true,
-      enum: ["L", "D"]
-    },
     user: {
       type: Schema.Types.ObjectId,
       ref: "User"
-    },
-    startTime: {
-      type: Date,
-      default: function() {
-        let d = new Date();
-        d.setDate(d.getDate() + 7);
-        return d;
-      }
     }
   },
   { timestamps: true }
@@ -35,7 +22,20 @@ const eventSchema = new Schema(
       required: true,
       type: String
     },
-    reactions: [reactionSchema]
+    reactions: [reactionSchema],
+    startTime: {
+      type: Date,
+      default: function() {
+        let d = new Date();
+        d.setDate(d.getDate() + 7);
+        return d;
+      }
+    },
+    image: String,
+    perks: [{
+      type: String,
+      enum: ['F', 'G']
+    }]
   },
   { timestamps: true }
 );
