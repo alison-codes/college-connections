@@ -1,3 +1,5 @@
+import tokenService from './tokenService';
+
 const BASE_URL = '/api/users/';
 
 function signup(user) {
@@ -5,6 +7,7 @@ function signup(user) {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
       }),
       body: JSON.stringify(user)
     })
@@ -12,7 +15,16 @@ function signup(user) {
       if (res.ok) return res.json();
       // duplicate username
       throw new Error('Username already taken');
-    });
+    })
+    .then(({token}) => tokenService.setToken(token));
+  }
+
+  function getUser() {
+    return tokenService.getUserFromToken();
+  }
+
+  function logout() {
+    tokenService.removeToken();
   }
   
   
@@ -22,17 +34,20 @@ function signup(user) {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
       }),
       body: JSON.stringify(creds)
     })
     .then(res => {
       if (res.ok) return res.json();
       throw new Error('Bad Credentials');
-    });
+    })
+    .then(({token}) => tokenService.setToken(token));
   }
   
   export default {
     signup,
-    // logout, //TODO Logout function
-    login
+    logout, 
+    login,
+    getUser
   };
