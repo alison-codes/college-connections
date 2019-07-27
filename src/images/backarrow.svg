@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-204.8%" y="-215.0%" width="509.5%" height="530.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0580474213 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <polygon id="path-2" points="0 0 21 0 21 20 0 20"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-XS-Max备份-12" transform="translate(-4.000000, -44.000000)">
+            <g id="编组" filter="url(#filter-1)" transform="translate(32.500000, 70.000000) scale(-1, 1) translate(-32.500000, -70.000000) translate(22.000000, 60.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M20.7337967,10.6618341 L12.0781257,19.5761838 C11.638573,20.0288728 10.934487,20.1504155 10.4232341,19.7862462 C9.75922892,19.3133766 9.69910773,18.3575469 10.2428705,17.7970748 L16.4317911,11.4236541 C16.4487141,11.4062254 16.4366898,11.3759544 16.4126414,11.3759544 L1.24695815,11.3759544 C0.53485598,11.3759544 0,10.7797075 0,10.0917303 L0,9.95413485 C0,9.22029252 0.578944857,8.66991076 1.24695815,8.66991076 L16.4130867,8.66991076 C16.4371352,8.66991076 16.4491594,8.64009842 16.4322364,8.62266966 L10.2428705,2.20292517 C9.69910773,1.64245309 9.75922892,0.686623444 10.4232341,0.213753789 C10.934487,-0.150415471 11.638573,-0.0288728338 12.0781257,0.423816158 L20.7337967,9.33816594 C21.0887344,9.70371116 21.0887344,10.2962888 20.7337967,10.6618341" id="Fill-1" fill="#222222" mask="url(#mask-3)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

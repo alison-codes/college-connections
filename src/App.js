@@ -58,7 +58,6 @@ class App extends Component {
             )}
             />
           </Switch>
-          Main App
         </main>
         <footer className="Footer">Made with <span role="img" aria-label="heart">💙</span> for LNKD by Macie, Ali, Chris, and Yang x 2</footer>
       </div>
