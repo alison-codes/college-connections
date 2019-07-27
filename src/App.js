@@ -1,20 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import SignupPage from './pages/SignupPage';
-import './App.css';
-import NavBar from './components/NavBar';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import SignupPage from "./pages/SignupPage";
+import "./App.css";
+import NavBar from "./components/NavBar";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from 'react-router-dom';
-
+  Redirect,
+} from "react-router-dom";
+import userService from "./utils/userService";
 
 class App extends Component {
   state = {
-    user: null,
+    user: null
   };
 
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+  };
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  };
 
   render() {
     return (
@@ -25,11 +34,18 @@ class App extends Component {
           {/* TODO add back logo if necessary <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
         <main>
-        <Route exact path="/signup" render={ props =>
-            <SignupPage
-            user={this.state.user}
-            /> } 
-          />
+          <Switch>
+            <Route
+              exact
+              path="/signup"
+              render={props => (
+                <SignupPage
+                  {...props}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
+          </Switch>
           Main App
         </main>
         <footer className="Footer">Made with <span role="img" aria-label="heart">💙</span> for LNKD by Macie, Ali, Chris, and Yang x 2</footer>
