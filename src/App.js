@@ -10,10 +10,12 @@ import {
   Redirect
 } from 'react-router-dom';
 
+
 class App extends Component {
   state = {
     user: null,
   };
+
 
   render() {
     return (
@@ -25,7 +27,6 @@ class App extends Component {
         <main>
         <Route exact path="/signup" render={ props =>
             <SignupPage
-            
             /> } 
           />
           Main App
