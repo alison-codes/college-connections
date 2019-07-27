@@ -30,7 +30,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <NavBar 
-          user={this.state.user}/>
+          user={this.state.user}
+          handleLogout={this.handleLogout} />
           {/* TODO add back logo if necessary <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
         <main>
