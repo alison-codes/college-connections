@@ -11,6 +11,14 @@ const reactionSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: "User"
+    },
+    startTime: {
+      type: Date,
+      default: function() {
+        let d = new Date();
+        d.setDate(d.getDate() + 7);
+        return d;
+      }
     }
   },
   { timestamps: true }
