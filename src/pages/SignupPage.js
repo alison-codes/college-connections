@@ -208,7 +208,7 @@ class SignupPage extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault();
-        // this.validateFields();
+        this.validateFields();
         await userService.signup(this.state);
         this.props.handleSignupOrLogin();
         this.props.history.push('/events');
