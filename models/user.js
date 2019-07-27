@@ -5,18 +5,14 @@ const userSchema = new Schema(
   {
     username: {
       required: true,
-      type: String
+      type: String,
+      unique: true
     },
     email: {
       required: true,
-      type: String
-    },
-    rooms: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Room"
-      }
-    ]
+      type: String,
+      unique: true
+    }
   },
   { timestamps: true }
 );
