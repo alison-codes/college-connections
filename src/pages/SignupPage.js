@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -30,6 +28,7 @@ class SignupPage extends React.Component {
         passwordFeedback: null,
         passConfFeedback: null,
     };
+
 
     handleChange = e => {
         let field = e.target.name;
@@ -75,8 +74,6 @@ class SignupPage extends React.Component {
         });
     };
 
-    validateFirstName = this.validateName;
-    validateLastName = this.validateName;
 
     validateDisplayName = e => {
         let displayName = e.target.value;
@@ -220,7 +217,7 @@ class SignupPage extends React.Component {
         fbs.pop();
         return <ul>
             {fbs.map(fb =>
-                <li>{fb}</li>
+                <li key={fb.toString()}>{fb}</li>
             )}
         </ul>;
     }
@@ -244,37 +241,51 @@ class SignupPage extends React.Component {
         );
     }
 
-    render() {
-        return <Container
-            style={{
-                height: '100vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}
-        >
-            <Card>
-                <Card.Body>
-                    <Form
-                        autoComplete='off'
-                        onSubmit={this.handleSubmit}
-                    >
-                        <this.ControlGroup id="displayName" labelText="Username " />
-                        <this.ControlGroup id="email" labelText="College Email" />
-                        <this.ControlGroup id="password" labelText="Password" type="password" />
-                        <this.ControlGroup id="passConf" labelText="Confirm Password" type="password" />
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'row-reverse',
-                        }}>
-                        <Link to='/'>Cancel</Link>
-                            <Button variant="outline-success" onClick={this.handleSubmit}>Submit</Button>
-                        </div>
 
-                    </Form>
-                </Card.Body>
-            </Card>
-        </Container>
+    render() {
+        return <div>
+            <Link to='/'> back arrow </Link>
+
+            {this.props.user ?
+                <Container>
+                    <Card>
+                        TODO add a list of interests here and a next button to continue to events page
+                        Place to list and interests
+                   <Link to='/events'> arrow to see events </Link>
+                    </Card>
+                </Container>
+
+                :
+                <Container
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Card>
+                        <Card.Body>
+                            <Form
+                                autoComplete='off'
+                                onSubmit={this.handleSubmit}
+                            >
+                                <this.ControlGroup id="displayName" labelText="Username " />
+                                <this.ControlGroup id="email" labelText="College Email" />
+                                <this.ControlGroup id="password" labelText="Password" type="password" />
+                                <this.ControlGroup id="passConf" labelText="Confirm Password" type="password" />
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'row-reverse',
+                                }}>
+                                    <Button variant="outline-success" onClick={this.handleSubmit}>Submit</Button>
+                                </div>
+
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Container>
+            }
+        </div>
     }
 }
 
