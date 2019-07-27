@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+
+import userService from '../utils/userService';
+
 
 var Filter = require('bad-words'),
     filter = new Filter();
@@ -208,6 +212,7 @@ class SignupPage extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.validateFields();
+        userService.signup(this.state);
     };
 
     getPasswordFeedback = (fbs) => {
@@ -254,7 +259,7 @@ class SignupPage extends React.Component {
                         autoComplete='off'
                         onSubmit={this.handleSubmit}
                     >
-                        <this.ControlGroup id="displayName" labelText="Usernane " />
+                        <this.ControlGroup id="displayName" labelText="Username " />
                         <this.ControlGroup id="email" labelText="College Email" />
                         <this.ControlGroup id="password" labelText="Password" type="password" />
                         <this.ControlGroup id="passConf" labelText="Confirm Password" type="password" />
@@ -262,7 +267,7 @@ class SignupPage extends React.Component {
                             display: 'flex',
                             flexDirection: 'row-reverse',
                         }}>
-                            <Button variant="secondary">Cancel</Button>
+                        <Link to='/'>Cancel</Link>
                             <Button variant="outline-success" onClick={this.handleSubmit}>Submit</Button>
                         </div>
 
