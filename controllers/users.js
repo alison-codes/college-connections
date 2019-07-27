@@ -10,6 +10,7 @@ module.exports = {
 };
 
 async function login(req, res) {
+  console.log(req.body);
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user) return res.status(401).json({ err: "bad credentials" });
@@ -27,7 +28,6 @@ async function login(req, res) {
 }
 
 async function signup(req, res) {
-  console.log(`req.body: ${req.body.displayName}`);
   const user = new User(req.body);
   try {
     await user.save();

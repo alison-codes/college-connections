@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import SignupPage from "./pages/SignupPage";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import userService from "./utils/userService";
+import LoginPage from "./pages/LoginPage";
 
 class App extends Component {
   state = {
@@ -45,6 +46,16 @@ class App extends Component {
                   handleSignupOrLogin={this.handleSignupOrLogin}
                 />
               )}
+            />
+            <Route
+            exact
+            path="/login"
+            render={props => (
+              <LoginPage
+              {...props}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            )}
             />
           </Switch>
           Main App
