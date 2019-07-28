@@ -32,10 +32,6 @@ footer {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -115,8 +111,6 @@ footer {
   letter-spacing: 0;
 }
 
-
-
 .column {
   flex: 50%;
   padding: 0 4px;
@@ -155,14 +149,11 @@ div > button {
 }
 
 
-.interstImg {
-  /* position: relative; */
-}
-
 .app-link {
   color: green;
   font-size: 22px;
   text-decoration: underline;
+  padding-bottom: 50px;
 }
 
 #interest1landing {
@@ -170,8 +161,4 @@ div > button {
   width: 100%;
   padding: 0px;
 
-}
-
-.landing-background {
-  background-color: lightgreen;
 }
