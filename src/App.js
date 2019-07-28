@@ -11,6 +11,9 @@ import {
 } from "react-router-dom";
 import userService from "./utils/userService";
 import LoginPage from "./pages/LoginPage";
+import EventsPage from "./pages/EventsPage";
+import LandingPage from "./pages/LandingPage";
+
 
 class App extends Component {
   state = {
@@ -57,6 +60,26 @@ class App extends Component {
               />
             )}
             />
+            <Route
+              exact
+              path="/events"
+              render={props => (
+                <EventsPage
+                  {...props}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <LandingPage
+                
+                />
+              )}
+            />
+            
           </Switch>
         </main>
         <footer className="Footer">Made with <span role="img" aria-label="heart">💙</span> for LNKD by Macie, Ali, Chris, and Yang x 2</footer>
