@@ -3,6 +3,7 @@ const router = express.Router();
 const usersCtrl = require("../../controllers/users");
 
 router.get("/", usersCtrl.index);
+router.post("/interest", usersCtrl.addInterests);
 router.post("/signup", usersCtrl.signup);
 router.post("/login", usersCtrl.login);
 

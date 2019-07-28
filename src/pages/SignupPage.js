@@ -10,7 +10,6 @@ import userService from '../utils/userService';
 import nextBlueArrow from '../images/nextarrowblue.svg';
 import backArrow from '../images/backarrow.svg';
 
-
 import interest1 from '../images/Gaming.png';
 import interest2 from '../images/LGBT.png';
 import interest3 from '../images/Gig.png';
@@ -171,7 +170,7 @@ class SignupPage extends React.Component {
     // }
   };
 
-  
+
   validatePassword = e => {
     let password = e.target.value;
     let feedback = Feedback['password'][0];
@@ -258,6 +257,14 @@ class SignupPage extends React.Component {
     </ul>;
   }
 
+  handleSendInterests = async e => {
+    e.preventDefault();
+    // this.validateFields();
+    await userService.sendInterests(this.state);
+    this.props.history.push('/events');
+
+  };
+
   ControlGroup = ({ id, labelText, type = 'text' }) => {
     return (
       <Form.Group controlId={id}>
@@ -279,72 +286,133 @@ class SignupPage extends React.Component {
   render() {
     return <div>
       {this.props.user ?
-        <Container>
-          <Link id="int-arrow" to='/events'>  <img src={nextBlueArrow} alt="Submit arrow" /> </Link>
+        <div>
+          <Container>
 
-          <div class="row Signup-nav">
-            <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
-            <div id="signup-steps">
-              <span>Step 2/2</span>
-            </div>
-          </div>
-          <Card>
-            <h4 className="Signup-msg">Select the 4 topics that interest you most.</h4>
-            <div class="row-int">
-              <div className="column">
-                <div className="row overlay">
-                  <button>
-                    <img id="interest1" className="interstImg" src={interest1} alt="User interest" />
-                  </button>
-                </div>
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest2} alt="User interest" />
-                  </button>
-                </div>
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest3} alt="User interest" />
-                  </button>
-                </div>
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest4} alt="User interest" />
-                  </button>
-                </div>
+            <div class="row Signup-nav">
+              <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
+              <div id="signup-steps">
+                <span>Step 2/2</span>
               </div>
-              <div className="column">
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest1} alt="User interest" />
-                  </button>
-                </div>
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest2} alt="User interest" />
-                  </button>
-                </div>
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest3} alt="User interest" />
-                  </button>
-                </div>
-                <div className="row">
-                  <button>
-                    <img className="interstImg" src={interest4} alt="User interest" />
-                  </button>
-                </div>
-              </div>
+            </div>
+            <Card>
+              <h4 className="Signup-msg">Select the 4 topics that interest you most.</h4>
+              <form>
 
+                <Button id="int-arrow"
+                  onClick={this.handleSendInterests}>
+                  <img src={nextBlueArrow} alt="Submit arrow" />
+                </Button>
+
+
+                <div class="row-int">
+                  <div className="column">
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={"soccer"} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={"LGBTQ"} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest2} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={3} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={"Tech"} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div className="column">
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={1} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={2} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest2} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={3} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={4} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <input
+                  type="hidden"
+                  value={this.props.user}
+                  id="user"
+                  name="user" />
+              </form>
+            </Card>
+          </Container>
+          <section >
+
+
+            <div className="selected-items">
+              {this.state.interests.map(number =>
+                <p key={number}>item: {number}</p>
+              )}
             </div>
 
-          </Card>
-        </Container>
-
+          </section>
+        </div>
         :
-
-
-      <div>
+        <div>
           <div class="container">
             <div class="row Signup-nav">
               <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
@@ -419,3 +487,5 @@ const Feedback = {
 };
 
 export default SignupPage;
+
+{/* <Link id="int-arrow" to='/events'>  <img src={nextBlueArrow} alt="Submit arrow" /> </Link> */ }
