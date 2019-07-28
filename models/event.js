@@ -6,7 +6,8 @@ const reactionSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      unique: true
+      unique: true,
+      required: true
     },
     checkedIn: {
       type: Boolean,
