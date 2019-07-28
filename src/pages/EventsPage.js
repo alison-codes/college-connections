@@ -2,19 +2,35 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import eventService from '../utils/eventService';
 import ConfettiGenerator from "confetti-js";
+import Button from 'react-bootstrap/Button';
+
+
+import nextBlueArrow from '../images/nextarrowblue.svg';
+
 
 class EventsPage extends Component {
   componentDidMount() {
     this.props.handleUpdateEvents();
-  }  
+  }
+
+  handleAddReaction = async e => {
+    await eventService.sendInterests(this.state);
+  };
+
+
 
   render() {
     let sampleEvent =
       [{ name: 'sample event1', startTime: 'Monday at 2pm', description: 'sample description 1' }, { name: 'sample event2', startTime: 'Monday at 5pm', description: 'sample description 2' }];
     const eventList = this.props.events.map((e, idx) => (
-      <div className="card card-signin my-5">
+      <div id="event-card" className="card my-5">
         <div className="card-header" id="headingOne">
-          <h3>name: {e.name}</h3>
+          <h3>{e.name}</h3>
+          <Button id="interested-btn" 
+          onClick={this.handleAddReaction}
+          >
+            <img height="21px" width="21px" src={nextBlueArrow} alt="I'm interested" /> 8
+          </Button>
           <button
             className="accent-text btn-link"
             type="button"
@@ -22,7 +38,7 @@ class EventsPage extends Component {
             data-target={"#e" + idx}
             aria-expanded="true"
             aria-controls="collapseOne">
-            + push me to toggle event details
+            More
           </button>
         </div>
         <div
@@ -36,11 +52,11 @@ class EventsPage extends Component {
       </div>
     ));
 
-  const events = this.props.events.map((event, idx) => (
-    <div key={idx}>
-      {event.name} starts at {event.startTime}
-    </div>
-  ));
+    const events = this.props.events.map((event, idx) => (
+      <div key={idx}>
+        {event.name} starts at {event.startTime}
+      </div>
+    ));
     return (
       <div className="Events">
         <div className="container">
@@ -50,6 +66,7 @@ class EventsPage extends Component {
             <Confetti />
           </div>
         </div>
+
       </div>
     );
   };

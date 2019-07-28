@@ -25,6 +25,7 @@
   color: white;
 }
 
+
 main {
   min-height: calc(100vh - 85px);
 }
@@ -79,10 +80,15 @@ footer {
   font-size: 17px;
   color: #777777;
   letter-spacing: .9px;
-  text-align: right !important;
-  margin-top: -55px !important;
+  /* text-align: right !important; */
+  /* margin-right: 150px !important; */
   font-weight: 400;
+  display: flex; 
+}
 
+#signup-steps > span {
+  justify-content: flex-end; 
+  display: flex; 
 }
 
 .Login-btn{
@@ -207,4 +213,31 @@ input:checked + .fancy-checkbox:before {
 input:checked + .fancy-checkbox-img + img {
   transform: scale(0.9);
   box-shadow: 0 0 5px #bdbdff;
+}
+
+#int-arrow {
+  background-color:#FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.input-group {
+  display: inline;
+}
+
+.centered {
+  display: block;
+}
+
+#root > div > main > div > div > div > div.card {
+  border: none;
+}
+
+#interested-btn {
+  background-color: #fff;
+  width: 75px;
+  height: 44px;
+  border-radius: 8px;
+  border: #37AA85 solid 1px;
+  color: #37AA85;
+  font-size: 21px;
 }

@@ -37,7 +37,7 @@ class LoginPage extends Component {
       <div>
         <h2 className="row Signup-nav"><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Log In</h2>
 
-        <h4 className="Signup-msg">Let's start a new life style here.</h4>
+        <h4 className="Signup-msg">Colorful college life starts here!</h4>
 
         <form onSubmit={this.handleSubmit}>
           {/* <label htmlFor="displayName">Display Name: </label> */}
@@ -48,15 +48,15 @@ class LoginPage extends Component {
           <br />
           <button className="Login-btn">Log In</button>
         </form>
-        <p className="row Login-auth"> Or log in with </p>
+        <p className="row Login-auth centered"> Or log in with </p>
         <img src={linkedinImg} alt="LinkedIn" />  
         <img src={instaImg} alt="Instagram" /> 
         <img src={facebookImg} alt="Facebook" /> 
         <img src={twitterImg} alt="Twitter" />
 
-        <p className="row Login-signuplink"> Don't have an account yet?</p>
+        <p className="row Login-signuplink centered"> Don't have an account yet?</p>
 
-        <p className="row app-link"> <Link className="app-link"to='/signup'> Sign Up</Link></p>
+        <p className="row app-link centered"> <Link className="app-link"to='/signup'> Sign Up</Link></p>
       </div>
     );
   }
