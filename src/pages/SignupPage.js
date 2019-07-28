@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 
 import userService from '../utils/userService';
 
+import nextYellowArrow from '../images/nextbuttonyellow.svg';
 import nextBlueArrow from '../images/nextarrowblue.svg';
 import backArrow from '../images/backarrow.svg';
 
@@ -293,22 +294,26 @@ class SignupPage extends React.Component {
         <div>
           <Container>
 
-            <div class="row Signup-nav">
+            <div className="row Signup-nav">
+            <div className="col-6">
               <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
-              <div id="signup-steps">
-                <span>Step 2/2</span>
+              </div>
+              <div className="col-6">
+              <div id="signup-steps">              
+              </div>
+                <span className="float-right align-middle">Step 2/2</span>
               </div>
             </div>
             <Card>
               <h4 className="Signup-msg">Choose at least 4 categories you want to try.</h4>
               <form>
-                <div class="row-int">
+                <div className="row-int">
                   <div className="column">
                     <div className="row">
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={"soccer"} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
                         </label>
                       </div>
@@ -318,7 +323,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={"LGBTQ"} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest2} alt="User interest" />
                         </label>
                       </div>
@@ -328,7 +333,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={3} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
                         </label>
                       </div>
@@ -338,7 +343,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={"Tech"} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
                         </label>
                       </div>
@@ -350,7 +355,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={1} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
                         </label>
                       </div>
@@ -360,7 +365,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={2} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest2} alt="User interest" />
                         </label>
                       </div>
@@ -370,7 +375,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={3} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
                         </label>
                       </div>
@@ -380,7 +385,7 @@ class SignupPage extends React.Component {
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={4} onChange={this.handleCheckboxChange.bind(this)} />
-                          <span class="fancy-checkbox fancy-checkbox-img"></span>
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
                         </label>
                       </div>
@@ -398,7 +403,7 @@ class SignupPage extends React.Component {
                 <Button id="int-arrow"
                   onClick={this.handleSendInterests}
                   disabled={this.isFormInvalid()}>
-                  <img src={nextBlueArrow} alt="Submit arrow" />
+                  <img src={nextYellowArrow} alt="Submit arrow" />
                 </Button>
 
 
@@ -409,15 +414,19 @@ class SignupPage extends React.Component {
         </div>
         :
         <div>
-          <div class="container">
-            <div class="Signup-nav">
+          <div className="container">
+          <div className="row Signup-nav">
+            <div className="col-6">
               <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
-              <div id="signup-steps">
-                <span>Step 1/2</span>
+              </div>
+              <div className="col-6">
+              <div id="signup-steps">              
+              </div>
+                <span className="float-right align-middle">Step 1/2</span>
               </div>
             </div>
           </div>
-          <h4 className="Signup-msg">Colorful college life starts here!.</h4>
+          <h4 className="Signup-msg">Colorful college life starts here!</h4>
           <Container
             style={{
               display: 'flex',
@@ -439,10 +448,12 @@ class SignupPage extends React.Component {
                     display: 'flex',
                     flexDirection: 'row-reverse',
                   }}>
-                    <Button className="Signup-btn" variant="outline-success" onClick={this.handleSubmit}>
+                  </div>
+                  <p className=" Login-signuplink centered underline "> Language Setting</p>
+                    <Button id="int-arrow" onClick={this.handleSubmit}>
                       <img src={nextBlueArrow} alt="Submit arrow" />
                     </Button>
-                  </div>
+                
                 </Form>
               </Card.Body>
             </Card>

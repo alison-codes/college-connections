@@ -1,6 +1,4 @@
 
-
-
 .App {
   text-align: center;
   font-family: 'Muli', sans-serif;
@@ -84,11 +82,14 @@ footer {
   /* margin-right: 150px !important; */
   font-weight: 400;
   display: flex; 
+  margin-top: 10px;
 }
+.float-right{
+  font-size: 17px;
+  color: #777777;
+  letter-spacing: .9px;
 
-#signup-steps > span {
-  justify-content: flex-end; 
-  display: flex; 
+  font-weight: 400;
 }
 
 .Login-btn{
@@ -195,15 +196,15 @@ div > button {
 }
 .fancy-checkbox-label:hover > .fancy-checkbox:before,
 input:focus + .fancy-checkbox:before {
-  border-color: #bdbdff;
+  border-color: #37AA85;
 }
 .fancy-checkbox-label:hover > input:not(:checked) + .fancy-checkbox:before {
   color: #eee;
 }
 input:checked + .fancy-checkbox:before {
   color: #fff;
-  background: #bdbdff;
-  border-color: #bdbdff;
+  background: #37AA85;
+  border-color: #37AA85;
 }
 .fancy-checkbox-img:before {
   position: absolute;
@@ -212,7 +213,7 @@ input:checked + .fancy-checkbox:before {
 }
 input:checked + .fancy-checkbox-img + img {
   transform: scale(0.9);
-  box-shadow: 0 0 5px #bdbdff;
+  box-shadow: 0 0 5px #37AA85;
 }
 
 #int-arrow {
@@ -257,4 +258,21 @@ input:checked + .fancy-checkbox-img + img {
   color: #37AA85;
   text-decoration: underline;
   background: transparent;
+}
+
+#image-btn {
+  background: transparent;
+  border: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.btn-primary:disabled {
+  opacity: .4;
+}
+
+#interest1 {
+  width: 60%
 }

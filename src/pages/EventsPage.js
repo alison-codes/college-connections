@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 
 import nextBlueArrow from '../images/nextarrowblue.svg';
+import handupImg from '../images/handup.png';
 
 
 class EventsPage extends Component {
@@ -36,7 +37,7 @@ class EventsPage extends Component {
                 <Button id="interested-btn"
                   onClick={this.handleAddReaction}
                 >
-                  <img height="21px" width="21px" src={nextBlueArrow} alt="I'm interested" /> 8
+                  <img height="21px" width="21px" src={handupImg} alt="I'm interested" /> 8
           </Button>
               </div>
               <div class="row">
