@@ -7,7 +7,7 @@ import {
   // BrowserRouter as Router,
   Switch,
   Route,
-  // Redirect,
+  Redirect,
 } from "react-router-dom";
 import userService from "./utils/userService";
 import LoginPage from "./pages/LoginPage";
@@ -46,6 +46,7 @@ class App extends Component {
               render={props => (
                 <SignupPage
                   {...props}
+                  user={this.state.user}
                   handleSignupOrLogin={this.handleSignupOrLogin}
                 />
               )}
@@ -64,12 +65,16 @@ class App extends Component {
               exact
               path="/events"
               render={props => (
+                userService.getUser() ?
                 <EventsPage
                   {...props}
                   handleSignupOrLogin={this.handleSignupOrLogin}
                 />
+                :
+                <Redirect to='/signup' />
               )}
             />
+
             <Route
               exact
               path="/"
@@ -89,3 +94,4 @@ class App extends Component {
 }
 
 export default App;
+
