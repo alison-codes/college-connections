@@ -3,33 +3,48 @@ import userService from "../utils/userService";
 
 class LoginPage extends Component {
   state = {
-    displayName: '',
-    password: ''
+    displayName: "",
+    password: ""
   };
 
   handleChange = e => {
-    let field = e.target.name;
     this.setState({
-      [field]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    await userService.login(this.state);
-    this.props.handleSignupOrLogin();
-    this.props.history.push('/events');
-  }
+    try {
+      await userService.login(this.state);
+      this.props.handleSignupOrLogin();
+      this.props.history.push("/events");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="displayName">Display Name: </label>
-          <input value={this.state.displayName} type="text" id="displayName" name="displayName" onChange={this.handleChange} />
+          <input
+            value={this.state.displayName}
+            type="text"
+            id="displayName"
+            name="displayName"
+            onChange={this.handleChange}
+          />
 
           <label htmlFor="password">Password: </label>
-          <input value={this.state.password} type="password" id="password" name="password" onChange={this.handleChange} />
+          <input
+            value={this.state.password}
+            type="password"
+            id="password"
+            name="password"
+            onChange={this.handleChange}
+          />
 
           <button>Login</button>
         </form>

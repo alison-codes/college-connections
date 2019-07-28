@@ -14,7 +14,7 @@ import LoginPage from "./pages/LoginPage";
 
 class App extends Component {
   state = {
-    user: null
+    user: userService.getUser()
   };
 
   handleSignupOrLogin = () => {
