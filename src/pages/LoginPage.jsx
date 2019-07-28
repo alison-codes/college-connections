@@ -35,7 +35,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <h2 class="row Signup-nav"><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Log In</h2>
+        <h2 className="row Signup-nav"><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Log In</h2>
 
         <h4 className="Signup-msg">Let's start a new life style here.</h4>
 
@@ -48,15 +48,15 @@ class LoginPage extends Component {
           <br />
           <button className="Login-btn">Log In</button>
         </form>
-        <p class="row Login-auth"> Or log in with </p>
+        <p className="row Login-auth"> Or log in with </p>
         <img src={linkedinImg} alt="LinkedIn" />  
         <img src={instaImg} alt="Instagram" /> 
         <img src={facebookImg} alt="Facebook" /> 
         <img src={twitterImg} alt="Twitter" />
 
-        <p class="row Login-signuplink"> Don't have an account yet?</p>
+        <p className="row Login-signuplink"> Don't have an account yet?</p>
 
-        <p class="row app-link"> <Link class="app-link"to='/signup'> Sign Up</Link></p>
+        <p className="row app-link"> <Link className="app-link"to='/signup'> Sign Up</Link></p>
       </div>
     );
   }
