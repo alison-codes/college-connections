@@ -22,9 +22,9 @@ class EventsPage extends Component {
   render() {
     let sampleEvent =
       [{ name: 'sample event1', startTime: 'Monday at 2pm', description: 'sample description 1' }, { name: 'sample event2', startTime: 'Monday at 5pm', description: 'sample description 2' }];
-
     const eventList = this.props.events.map((e, idx) => (
       <div key={idx}  id="event-card" className="card my-5">
+
         <div className="card-header" id="headingOne">
           <h3>{e.name}</h3>
           <Button id="interested-btn" 
