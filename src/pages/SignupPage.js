@@ -11,6 +11,17 @@ import nextBlueArrow from '../images/nextarrowblue.svg';
 import backArrow from '../images/backarrow.svg';
 
 
+import interest1 from '../images/Gaming.png';
+import interest2 from '../images/LGBT.png';
+import interest3 from '../images/Gig.png';
+import interest4 from '../images/Tech.png';
+import interest5 from '../images/Painting.png';
+import interest6 from '../images/Football.png';
+import interest7 from '../images/Reading.png';
+import interest8 from '../images/backarrow.svg';
+
+
+
 var Filter = require('bad-words'),
   filter = new Filter();
 
@@ -214,7 +225,7 @@ class SignupPage extends React.Component {
     // this.validateFields();
     await userService.signup(this.state);
     this.props.handleSignupOrLogin();
-    this.props.history.push('/events');
+    this.props.history.push('/signup');
   };
 
   getPasswordFeedback = (fbs) => {
@@ -245,17 +256,68 @@ class SignupPage extends React.Component {
       </Form.Group>
     );
   }
-
-
   render() {
     return <div>
-      {this.props.user ?
+      {!this.props.user ?
         <Container>
-          <Link to='/'>  <img src={backArrow} alt="Back Arrow" /></Link>
+          <Link id="int-arrow" to='/events'>  <img src={nextBlueArrow} alt="Submit arrow" /> </Link>
+
+          <div class="row Signup-nav">
+            <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
+            <div id="signup-steps">
+              <span>Step 2/2</span>
+            </div>
+          </div>
           <Card>
-            TODO add a list of interests here and a next button to continue to events page
-            Place to list and interests
-                   <Link to='/events'> arrow to see events </Link>
+            <h4 className="Signup-msg">Select the 4 topics that interest you most.</h4>
+            <div class="row-int">
+              <div className="column">
+                <div className="row overlay">
+                  <button>
+                    <img id="interest1" className="interstImg" src={interest1} alt="User interest" />
+                  </button>
+                </div>
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest2} alt="User interest" />
+                  </button>
+                </div>
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest3} alt="User interest" />
+                  </button>
+                </div>
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest4} alt="User interest" />
+                  </button>
+                </div>
+              </div>
+              <div className="column">
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest1} alt="User interest" />
+                  </button>
+                </div>
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest2} alt="User interest" />
+                  </button>
+                </div>
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest3} alt="User interest" />
+                  </button>
+                </div>
+                <div className="row">
+                  <button>
+                    <img className="interstImg" src={interest4} alt="User interest" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
           </Card>
         </Container>
 
@@ -265,8 +327,8 @@ class SignupPage extends React.Component {
             <div class="row Signup-nav">
               <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
               <div id="signup-steps">
-              <span>Step 1/2</span>     
-              </div>     
+                <span>Step 1/2</span>
+              </div>
             </div>
           </div>
           <h4 className="Signup-msg">Let's start a new life style here.</h4>
