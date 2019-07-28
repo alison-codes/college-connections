@@ -23,46 +23,60 @@ class EventsPage extends Component {
     let sampleEvent =
       [{ name: 'sample event1', startTime: 'Monday at 2pm', description: 'sample description 1' }, { name: 'sample event2', startTime: 'Monday at 5pm', description: 'sample description 2' }];
     const eventList = this.props.events.map((e, idx) => (
-      <div key={idx}  id="event-card" className="card my-5">
+      <div key={idx} id="event-card" className="card my-5">
 
         <div className="card-header" id="headingOne">
-          <h3>{e.name}</h3>
-          <Button id="interested-btn" 
-          onClick={this.handleAddReaction}
-          >
-            <img height="21px" width="21px" src={nextBlueArrow} alt="I'm interested" /> 8
+          <div class="row">
+            <div id="event-img" class="col-4">col-8</div>
+            <div class="col-8">
+              <div class="row">
+                <h3>{e.name}</h3>
+
+
+                <Button id="interested-btn"
+                  onClick={this.handleAddReaction}
+                >
+                  <img height="21px" width="21px" src={nextBlueArrow} alt="I'm interested" /> 8
           </Button>
-          <button
-            className="accent-text btn-link"
-            type="button"
-            data-toggle="collapse"
-            data-target={"#e" + idx}
-            aria-expanded="true"
-            aria-controls="collapseOne">
-            More
+              </div>
+              <div class="row">
+              {e.startTime}
+              </div>
+              <div class="row">
+                perks row
+              </div>
+              <div class="row">
+              <button
+                className="more-btn"
+                type="button"
+                data-toggle="collapse"
+                data-target={"#e" + idx}
+                aria-expanded="false"
+                aria-controls="collapseOne">
+                More
           </button>
-        </div>
-        <div
-          id={"e" + idx}
-          className="collapse show"
-          aria-labelledby="headingOne">
-          <div className="card-body">
-            <h4>{e.description}</h4>
+            </div>
           </div>
         </div>
+
+
       </div>
+      <div
+        id={"e" + idx}
+        className="collapse "
+        aria-labelledby="headingOne">
+        <div className="card-body">
+          <h4>{e.description}</h4>
+        </div>
+      </div>
+      </div >
     ));
 
-    const events = this.props.events.map((event, idx) => (
-      <div key={idx}>
-        {event.name} starts at {event.startTime}
-      </div>
-    ));
+    
     return (
       <div className="Events">
         <div className="container">
           <div >
-            {events}
             {eventList}
             <Confetti />
           </div>
