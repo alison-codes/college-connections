@@ -41,8 +41,6 @@ class EventsPage extends Component {
               <div class="row">
                 <h3>{e.name}</h3>
 
-
-
                 <form onSubmit={this.handleReactionButtonClick}>
                   <Button id="interested-btn">
                   <img height="21px" width="21px" src={handupImg} alt="I'm interested" /> 8
