@@ -6,6 +6,10 @@ const reactionSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: "User"
+    },
+    checkedIn: {
+      type: Boolean,
+      default: false
     }
   },
   { timestamps: true }

@@ -11,23 +11,26 @@ import linkedinImg from '../images/linkedin.svg';
 
 class LoginPage extends Component {
   state = {
-    displayName: '',
-    password: ''
+    displayName: "",
+    password: ""
   };
 
   handleChange = e => {
-    let field = e.target.name;
     this.setState({
-      [field]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    await userService.login(this.state);
-    this.props.handleSignupOrLogin();
-    this.props.history.push('/');
-  }
+    try {
+      await userService.login(this.state);
+      this.props.handleSignupOrLogin();
+      this.props.history.push("/events");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
     return (

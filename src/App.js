@@ -17,7 +17,7 @@ import LandingPage from "./pages/LandingPage";
 
 class App extends Component {
   state = {
-    user: null
+    user: userService.getUser()
   };
 
   handleSignupOrLogin = () => {
