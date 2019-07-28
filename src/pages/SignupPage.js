@@ -259,7 +259,7 @@ class SignupPage extends React.Component {
   }
   render() {
     return <div>
-      {!this.props.user ?
+      {this.props.user ?
         <Container>
           <Link id="int-arrow" to='/events'>  <img src={nextBlueArrow} alt="Submit arrow" /> </Link>
 
@@ -323,9 +323,8 @@ class SignupPage extends React.Component {
         </Container>
 
         :
-        null
-      }
-      
+
+       
       <div>
           <div class="container">
             <div class="row Signup-nav">
@@ -366,8 +365,7 @@ class SignupPage extends React.Component {
             </Card>
           </Container>
         </div>
-
-
+      }
     </div>
   }
 }

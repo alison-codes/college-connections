@@ -19,7 +19,7 @@ const LandingPage = (props) => {
         <div className="landing-background">
             Landing page
             <section>
-                <Link to='/signup' className='NavBar-link'>Get Started</Link>
+                <Link to='/events' className='NavBar-link'>Get Started</Link>
             </section>
             <canvas id="my-canvas"></canvas>
 
