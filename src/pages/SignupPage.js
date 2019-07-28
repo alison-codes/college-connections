@@ -19,6 +19,7 @@ import interest5 from '../images/Painting.png';
 import interest6 from '../images/Football.png';
 import interest7 from '../images/Reading.png';
 import interest8 from '../images/backarrow.svg';
+import { optionalCallExpression } from '@babel/types';
 
 
 
@@ -31,6 +32,7 @@ class SignupPage extends React.Component {
     email: '',
     password: '',
     passConf: '',
+    interests: [],
 
     isDisplayNameValid: false,
     isEmailValid: false,
@@ -53,6 +55,23 @@ class SignupPage extends React.Component {
     field = field.charAt(0).toUpperCase() + field.slice(1);
     this['validate' + field](e);
   };
+
+  handleCheckboxChange = e => {
+    const interests = this.state.interests;
+
+    //check if check box is checked or unchecked
+    if (e.target.checked) {
+      //push if checked
+      interests.push(e.target.value);
+    } else {
+      //else find index of unchecked value and remove from array
+      let index = interests.indexOf(e.target.value);
+      interests.splice(index, 1);
+    }
+
+    //update state with new interests array
+    this.setState({ interests: interests });
+  }
 
   validateFields = () => {
     Object.keys(this.state)
@@ -324,7 +343,7 @@ class SignupPage extends React.Component {
 
         :
 
-       
+
       <div>
           <div class="container">
             <div class="row Signup-nav">
