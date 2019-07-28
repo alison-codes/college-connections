@@ -34,6 +34,7 @@ function deleteEvent(req, res) {
 function createReaction(req, res) {
   Event.findById(req.params.eventId)
     .then(async event => {
+      //TODO: also push event into user events array
       event.reactions.push(req.body);
       await event.save();
       return res.json(event);
@@ -44,10 +45,12 @@ function createReaction(req, res) {
 function deleteReaction(req, res) {
   Event.findById(req.params.eventId)
     .then(async event => {
-      event.reactions.id(req.params.reactionId).remove();
+      const reactionIdx = event.reactions.id(req.params.reactionId);
+      event.reactions[reactionIdx].remove();
       await event.save();
       return res.json(event);
     })
+    .catch(err => res.status(400).json(err));
 }
 
 module.exports = {

@@ -21,7 +21,11 @@ const userSchema = new Schema(
       required: true
     },
     interests: [String],
-    events: []
+    events: [{
+      type: Schema.Types.ObjectId,
+      ref: "Event",
+      unique: true
+    }]
   },
   { timestamps: true }
 );
