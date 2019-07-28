@@ -9,11 +9,19 @@ import nextBlueArrow from '../images/nextarrowblue.svg';
 
 
 class EventsPage extends Component {
+  state = {
+
+  }
   componentDidMount() {
     this.props.handleUpdateEvents();
   }
 
+  handleReactionButtonClick = e => {
+    e.preventDefault();
+  }
+
   handleAddReaction = async e => {
+    e.preventDefault();
     await eventService.sendInterests(this.state);
   };
 
@@ -33,11 +41,12 @@ class EventsPage extends Component {
                 <h3>{e.name}</h3>
 
 
-                <Button id="interested-btn"
-                  onClick={this.handleAddReaction}
-                >
+                <form onSubmit={this.handleReactionButtonClick}>
+                  <Button id="interested-btn">
                   <img height="21px" width="21px" src={nextBlueArrow} alt="I'm interested" /> 8
-          </Button>
+                  </Button>
+                </form>
+
               </div>
               <div class="row">
               {e.startTime}
