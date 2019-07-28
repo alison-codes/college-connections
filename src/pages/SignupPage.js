@@ -20,6 +20,7 @@ import interest6 from '../images/Football.png';
 import interest7 from '../images/Reading.png';
 import interest8 from '../images/backarrow.svg';
 import { optionalCallExpression } from '@babel/types';
+import tokenService from '../utils/tokenService';
 
 
 
@@ -44,6 +45,10 @@ class SignupPage extends React.Component {
     passwordFeedback: null,
     passConfFeedback: null,
   };
+
+  componentWillMount() {
+    this.setState({ user: tokenService.getUserFromToken()});
+  }
 
 
   handleChange = e => {
