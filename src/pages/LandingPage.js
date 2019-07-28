@@ -9,8 +9,9 @@ const LandingPage = (props) => {
     React.useEffect(() => {
         const confettiSettings = { target: 'my-canvas' };
         const confetti = new ConfettiGenerator(confettiSettings);
+        
         confetti.render();
-
+        setTimeout(confetti.clear, 100000);
         return () => confetti.clear();
     }, [])
 

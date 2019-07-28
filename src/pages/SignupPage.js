@@ -152,6 +152,7 @@ class SignupPage extends React.Component {
     // }
   };
 
+  
   validatePassword = e => {
     let password = e.target.value;
     let feedback = Feedback['password'][0];
@@ -322,7 +323,10 @@ class SignupPage extends React.Component {
         </Container>
 
         :
-        <div>
+        null
+      }
+      
+      <div>
           <div class="container">
             <div class="row Signup-nav">
               <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
@@ -362,7 +366,8 @@ class SignupPage extends React.Component {
             </Card>
           </Container>
         </div>
-      }
+
+
     </div>
   }
 }
