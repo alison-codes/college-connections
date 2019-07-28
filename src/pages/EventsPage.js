@@ -12,7 +12,7 @@ class EventsPage extends Component {
     let sampleEvent =
       [{ name: 'sample event1', startTime: 'Monday at 2pm', description: 'sample description 1' }, { name: 'sample event2', startTime: 'Monday at 5pm', description: 'sample description 2' }];
     const eventList = sampleEvent.map((e, idx) => (
-      <div className="card card-signin my-5">
+      <div key={idx} className="card card-signin my-5">
         <div className="card-header" id="headingOne">
           <h3>name: {e.name}</h3>
           <button

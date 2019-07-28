@@ -25,6 +25,11 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Event",
       unique: true
+    }],
+    matches: [{
+      type: Schema.Types.ObjectId,
+      ref: "Match",
+      unique: true
     }]
   },
   { timestamps: true }

@@ -39,7 +39,7 @@ async function signup(req, res) {
 }
 
 function addInterests(req, res) {
-  User.findOne({ username: req.body.user })
+  User.findOne({ username: req.body.user.displayName })
     .then(async user => {
       req.body.interests.forEach(interest => {
         user.interests.push(interest);
