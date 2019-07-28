@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import eventService from '../utils/eventService';
+import ConfettiGenerator from "confetti-js";
+
 class EventsPage extends Component {
   componentDidMount() {
     this.props.handleUpdateEvents();
   }  
-import ConfettiGenerator from "confetti-js";
 
   render() {
     let sampleEvent =
@@ -23,7 +24,6 @@ import ConfettiGenerator from "confetti-js";
             aria-controls="collapseOne">
             + push me to toggle event details
           </button>
-       
         </div>
         <div
           id={"e" + idx}
@@ -46,6 +46,7 @@ import ConfettiGenerator from "confetti-js";
         <div className="container">
           <div >
             {events}
+            {eventList}
             <Confetti />
           </div>
         </div>
