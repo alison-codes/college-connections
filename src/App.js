@@ -13,12 +13,19 @@ import userService from "./utils/userService";
 import LoginPage from "./pages/LoginPage";
 import EventsPage from "./pages/EventsPage";
 import LandingPage from "./pages/LandingPage";
+import eventService from "./utils/eventService";
 
 
 class App extends Component {
   state = {
-    user: userService.getUser()
+    user: userService.getUser(),
+    events: []
   };
+
+  handleUpdateEvents = async () => {
+    const events = await eventService.index();
+    this.setState({ events });
+  }
 
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
@@ -69,6 +76,8 @@ class App extends Component {
                 <EventsPage
                   {...props}
                   handleSignupOrLogin={this.handleSignupOrLogin}
+                  handleUpdateEvents={this.handleUpdateEvents}
+                  events={this.state.events}
                 />
                 :
                 <Redirect to='/signup' />
