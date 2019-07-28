@@ -158,7 +158,6 @@ div > button {
     border: none;
 }
 
-
 .app-link {
   color: green;
   font-size: 22px;
@@ -274,5 +273,87 @@ input:checked + .fancy-checkbox-img + img {
 }
 
 #interest1 {
-  width: 60%
+  width: 60%;
+}
+
+
+#color-background {
+  margin-top: -60px;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #37AA85
+}
+
+#matchy-greeting{
+  margin-top: 10vh;
+  font-size: 140px;
+  color: white;
+  font-weight: 900;
+
+}
+#matchy-number-msg{
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 25vh;
+  color: #FFFFFF;
+}
+
+#matchy-image{
+  margin-top: 20vh;
+}
+
+#color-background1 {
+  margin-top: -60px;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #37AA85
+}
+
+#matchy-greeting1{
+  margin-top: 10vh;
+  font-size: 140px;
+  color: white;
+  font-weight: 900;
+
+}
+#matchy-number-msg1{
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 25vh;
+  color: #FFFFFF;
+}
+
+#matchy-image1{
+  margin-top: 20vh;
+}
+
+#color-background2 {
+  margin-top: -60px;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #FACC1F;
+}
+
+#matchy-greeting2{
+  margin-top: 10vh;
+  font-size: 140px;
+  color: black;
+  font-weight: 900;
+
+}
+#matchy-number-msg2{
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 25vh;
+  color: black;
+}
+
+#matchy-image2{
+  margin-top: 20vh;
 }
