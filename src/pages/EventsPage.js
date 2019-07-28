@@ -24,7 +24,6 @@ class EventsPage extends Component {
             aria-controls="collapseOne">
             + push me to toggle event details
           </button>
-       
         </div>
         <div
           id={"e" + idx}
