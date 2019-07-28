@@ -43,9 +43,24 @@ function login(creds) {
     .then(({ token }) => tokenService.setToken(token));
 }
 
+function sendInterests(data) {
+  return fetch(BASE_URL + "interest", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + tokenService.getToken()
+    }),
+    body: JSON.stringify(data)
+  }).then(res => {
+    if (res.ok) return res.json();
+    throw new Error("Interests Not Received");
+  });
+}
+
 export default {
   signup,
   logout,
   login,
-  getUser
+  getUser,
+  sendInterests
 };
