@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import eventService from '../utils/eventService';
+import ConfettiGenerator from "confetti-js";
+
+
 class EventsPage extends Component {
   componentDidMount() {
     this.props.handleUpdateEvents();
   }  
-import ConfettiGenerator from "confetti-js";
 
   render() {
     let sampleEvent =
       [{ name: 'sample event1', startTime: 'Monday at 2pm', description: 'sample description 1' }, { name: 'sample event2', startTime: 'Monday at 5pm', description: 'sample description 2' }];
-    const eventList = sampleEvent.map((e, idx) => (
+    const eventList = this.props.events.map((e, idx) => (
       <div className="card card-signin my-5">
         <div className="card-header" id="headingOne">
           <h3>name: {e.name}</h3>
@@ -45,7 +47,7 @@ import ConfettiGenerator from "confetti-js";
       <div className="Events">
         <div className="container">
           <div >
-            {events}
+            {eventList}
             <Confetti />
           </div>
         </div>
