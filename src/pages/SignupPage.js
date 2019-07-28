@@ -262,8 +262,12 @@ class SignupPage extends React.Component {
     // this.validateFields();
     await userService.sendInterests(this.state);
     this.props.history.push('/events');
-
   };
+
+  isFormInvalid() {
+    //requires users select at least four interests to continue to events page
+    return !(this.state.interests.length >= 4);
+  }
 
   ControlGroup = ({ id, labelText, type = 'text' }) => {
     return (
@@ -296,15 +300,8 @@ class SignupPage extends React.Component {
               </div>
             </div>
             <Card>
-              <h4 className="Signup-msg">Select the 4 topics that interest you most.</h4>
+              <h4 className="Signup-msg">Choose at least 4 categories you want to try.</h4>
               <form>
-
-                <Button id="int-arrow"
-                  onClick={this.handleSendInterests}>
-                  <img src={nextBlueArrow} alt="Submit arrow" />
-                </Button>
-
-
                 <div class="row-int">
                   <div className="column">
                     <div className="row">
@@ -397,31 +394,30 @@ class SignupPage extends React.Component {
                   value={this.props.user}
                   id="user"
                   name="user" />
+
+                <Button id="int-arrow"
+                  onClick={this.handleSendInterests}
+                  disabled={this.isFormInvalid()}>
+                  <img src={nextBlueArrow} alt="Submit arrow" />
+                </Button>
+
+
               </form>
             </Card>
           </Container>
-          <section >
 
-
-            <div className="selected-items">
-              {this.state.interests.map(number =>
-                <p key={number}>item: {number}</p>
-              )}
-            </div>
-
-          </section>
         </div>
         :
         <div>
           <div class="container">
-            <div class="row Signup-nav">
+            <div class="Signup-nav">
               <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Sign Up</h2>
               <div id="signup-steps">
                 <span>Step 1/2</span>
               </div>
             </div>
           </div>
-          <h4 className="Signup-msg">Let's start a new life style here.</h4>
+          <h4 className="Signup-msg">Colorful college life starts here!.</h4>
           <Container
             style={{
               display: 'flex',
@@ -463,7 +459,7 @@ const Feedback = {
     'This field is required.',
     'The name is too short',
     'This name contains invalid characters.',
-    'This name contains inappropriate language.'
+    'This name contains offensive language.'
   ],
   'email': [
     'Looks good.',
