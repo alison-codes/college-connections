@@ -228,6 +228,12 @@ input:checked + .fancy-checkbox-img + img {
   display: block;
 }
 
+#headingOne {
+  border: 0 solid #D5E6F7;
+  box-shadow: 0 5px 25px 4px rgba(0,0,0,0.10);
+  border-radius: 20px;
+}
+
 #root > div > main > div > div > div > div.card {
   border: none;
 }
@@ -240,4 +246,15 @@ input:checked + .fancy-checkbox-img + img {
   border: #37AA85 solid 1px;
   color: #37AA85;
   font-size: 21px;
+}
+
+#event-img{
+  background-color: green;
+  padding: 0px;
+}
+
+.more-btn{
+  color: #37AA85;
+  text-decoration: underline;
+  background: transparent;
 }
