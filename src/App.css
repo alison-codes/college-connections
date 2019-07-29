@@ -390,8 +390,15 @@ input:checked + .fancy-checkbox-img + img {
 
 }
 
-/* Chris, this section will be for event card CSS */
+.thumbsup-msg {
+  margin-top: 50px;
+  color: white;
+  font-size: 20px
+}
 
+.thumbsup {
+  font-size: 70px
+}
 
 #event0, #event1, #event2, #event3  {
   padding: 0px;
