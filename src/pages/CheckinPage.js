@@ -1,27 +1,35 @@
 import React from 'react';
-import { Redirect, } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 class CheckinPage extends React.Component {
     state = {
         redirect: false,
+        value: 0,
     };
 
     handleChange = e => {
         let field = e.target.name;
         this.setState({
             [field]: e.target.value
-        });
-    };
+        })
 
-    isFormInvalid() {
-        return !(this.state.redirect);
     }
 
+    redirect() {
+        this.props.history.push('/match');
+    }
+
+
+    isFormInvalid() {
+        return !(this.state.value);
+    }
+
+    // const { redirect } = this.state;
+    // if (redirect) {
+    //     return <Redirect to='/match' />;
+    // }
     render() {
-        const { redirect } = this.state;
-        if (redirect) {
-            return <Redirect to='/match' />;
-        }
+
         return (
             <div className="landing-background">
                 <main id="color-background1">
@@ -36,14 +44,22 @@ class CheckinPage extends React.Component {
                             />
                             <input className="checkin-input" type="text"
                             />
-                            <input className="checkin-input" type="text" name="redirect"
-                                onChange={this.handleChange}
+                            <input className="checkin-input" type="text" name="value"
+                                onChange={this.handleChange.bind(this)}
                             />
-                            <br /><br /><br />
-                            <h3
+                            <br />
+                            <h2
+                                className="thumbsup-msg"
                                 hidden={this.isFormInvalid()}>
-                                <span role="img" aria-label="thumbs up">👍</span>
-                                </h3>
+                                <Link to='/match'>
+                                    <span
+                                        className="thumbsup"
+                                        role="img" width="200px" aria-label="thumbs up">👍
+                                    </span>
+                                </Link>
+                                <br />
+                                You're checked in. Click the thumb image to reveal your Match.
+                            </h2>
                         </form>
                     </div>
                     <br />
