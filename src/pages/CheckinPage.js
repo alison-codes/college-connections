@@ -1,15 +1,25 @@
 import React from 'react';
+import { Redirect, } from "react-router-dom";
 
-import dog from '../images/dog.svg';
 
 class CheckinPage extends React.Component {
     state = {
-        code: null,
-
+        redirect: false,
     };
 
+    handleChange = e => {
+        let field = e.target.name;
+        this.setState({
+            [field]: e.target.value
+        });
+    };
 
     render() {
+        const { redirect } = this.state;
+
+        if (redirect) {
+            return <Redirect to='/match' />;
+        }
         return (
             <div className="landing-background">
                 <main id="color-background1">
@@ -24,12 +34,12 @@ class CheckinPage extends React.Component {
                             />
                             <input className="checkin-input" type="text"
                             />
-                            <input className="checkin-input" type="text"
+                            <input className="checkin-input" type="text" name="redirect"
+                                onChange={this.handleChange}
                             />
                         </form>
                     </div>
                     <br />
-                    <img id="matchy-image1" className="interstImg" src={dog} alt="User interest" />
                 </main>
             </div>
         );

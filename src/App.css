@@ -391,6 +391,7 @@ input:checked + .fancy-checkbox-img + img {
   letter-spacing: 0;
   text-align: center;
   margin-left: 15px;
+  text-transform: uppercase;
 }
 
 .checkin-row {

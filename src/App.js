@@ -111,7 +111,7 @@ class App extends Component {
               path="/checkin"
               render={props => (
                 <CheckinPage
-                
+                {...props}
                 />
               )}
             />

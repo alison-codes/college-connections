@@ -11,7 +11,6 @@ const LandingPage = (props) => {
         const confettiSettings = { target: 'my-canvas' };
         const confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
-        setTimeout(confetti.clear, 1000);
         return () => confetti.clear();
     }, [])
 
