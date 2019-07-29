@@ -502,4 +502,20 @@ div > h4{
   left: 0;
   color: white;
   border: none;
+  background-color: white;
+}
+
+.fadeIn{
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    background-color: black;
+    opacity: 0;
+  }
+  to {
+    /* background-color: white; */
+    opacity: 1;
+  }
 }
