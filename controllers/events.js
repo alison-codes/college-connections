@@ -65,11 +65,33 @@ function deleteReaction(req, res) {
     .catch(err => res.status(400).json(err));
 }
 
+function checkMatch(req, res) {
+  Event.findById(req.params.id)
+  .then(event => {
+    // 
+  })
+}
+
+function checkIn(req, res) {
+  Event.findById(req.params.id)
+  .then(async event => {
+    let foundReaction = event.reactions.some(reaction => {
+      return reaction.user === req.body.user;
+    });
+    foundReaction.checkedIn = !foundReaction.checkedIn;
+    await event.save();
+    return res.json(event);
+  })
+  .catch(err => res.status(400).json(err));
+}
+
 module.exports = {
   index,
   detail,
   createEvent,
   deleteEvent,
   createReaction,
-  deleteReaction
+  deleteReaction,
+  checkMatch,
+  checkIn
 };

@@ -6,7 +6,6 @@ const reactionSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      unique: true,
       required: true
     },
     checkedIn: {
@@ -16,6 +15,20 @@ const reactionSchema = new Schema(
   },
   { timestamps: true }
 );
+
+const matchSchema = new Schema({
+  users: [{
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    unique: true,
+    required: true
+  }],
+  color: {
+    type: String,
+    default: '#123ABC'
+  }
+}, { timestamps: true });
+
 
 const eventSchema = new Schema(
   {
@@ -41,9 +54,15 @@ const eventSchema = new Schema(
     perks: [{
       type: String,
       enum: ['F', 'G']
-    }]
+    }],
+    matches: [matchSchema]
   },
   { timestamps: true }
 );
+
+eventSchema.pre("save", function(next) {
+  //search through reactions array
+  //compare interest arrays of 
+});
 
 module.exports = mongoose.model("Event", eventSchema);

@@ -12,14 +12,17 @@ function index() {
 .catch(err => console.log(err));
 }
 
-function addReaction(data) {
-  return fetch(`${BASE_URL}${data.event._id}/reactions`, {
+function addReaction(eventId, userId) {
+  console.log('adding reaction');
+  return fetch(`${BASE_URL}${eventId}/reactions`, {
     headers: new Headers({
       "Content-Type": "application/json",
       "Authorization": "Bearer " + tokenService.getToken()
     }),
     method: "POST",
-    body: JSON.stringify(data)
+    body: JSON.stringify({
+      user: userId
+    })
   }).then(res => res.json())
   .catch(err => console.log(err));
 }
