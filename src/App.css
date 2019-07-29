@@ -387,7 +387,14 @@ input:checked + .fancy-checkbox-img + img {
 #logo-landing{
   position: absolute;
   margin: 200px 0px 0px -100px;
+}
 
+
+#matchy-landing{
+  position: absolute;
+  align-self: center;
+  margin-top: 500px;
+  margin-left: 40%;
 }
 
 .thumbsup-msg {
