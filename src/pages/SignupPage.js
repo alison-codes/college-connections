@@ -34,6 +34,7 @@ class SignupPage extends React.Component {
     password: '',
     passConf: '',
     interests: [],
+    user: {},
 
     isDisplayNameValid: false,
     isEmailValid: false,
@@ -250,7 +251,7 @@ class SignupPage extends React.Component {
     // this.validateFields();
     await userService.signup(this.state);
     this.props.handleSignupOrLogin();
-    this.props.history.push('/signup');
+    // this.props.history.push('/signup');
   };
 
   getPasswordFeedback = (fbs) => {
@@ -265,6 +266,7 @@ class SignupPage extends React.Component {
 
   handleSendInterests = async e => {
     e.preventDefault();
+    await this.setState({ user: this.props.user });
     // this.validateFields();
     await userService.sendInterests(this.state);
     this.props.history.push('/events');

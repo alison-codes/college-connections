@@ -80,6 +80,7 @@ class App extends Component {
                   handleSignupOrLogin={this.handleSignupOrLogin}
                   handleUpdateEvents={this.handleUpdateEvents}
                   events={this.state.events}
+                  user={this.state.user}
                 />
                 :
                 <Redirect to='/signup' />
