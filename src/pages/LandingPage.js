@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ConfettiGenerator from "confetti-js";
 
-import dog from '../images/dog.svg';
-import computer from '../images/computer.svg';
+import logo from '../images/matchy_logo.svg';
 
 
 const LandingPage = (props) => {
@@ -16,8 +15,10 @@ const LandingPage = (props) => {
 
     return (
         <div className="landing-background">
+      
             <section>
-                <Link to='/events' className='NavBar-link'>Get Started</Link>
+                <Link to='/events' className='NavBar-link'>  
+                <img id="logo-landing" src={logo} height="250px" alt="Logo" /> </Link>
             </section>
             <canvas id="my-canvas"></canvas>
         </div>

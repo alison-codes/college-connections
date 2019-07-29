@@ -507,8 +507,8 @@ const Feedback = {
     'Looks good.',
     'This field is required.',
     'Must contain a minimum of 6 characters',
+    'Must contain at least one number.',
     'Must contain both uppercase and lowercase letters.',
-    'Must contain at least one number.'
   ],
   'passConf': [
     'Looks good.',
