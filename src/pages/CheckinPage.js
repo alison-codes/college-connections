@@ -33,18 +33,18 @@ class CheckinPage extends React.Component {
         return (
             <div className="landing-background">
                 <main id="color-background1">
-                    <h2 id="checkin-greeting">Hackathon Enthusiast<br /> 222 Second St. LinkedIn</h2>
+                    <h2 id="checkin-greeting">Hackathon Enthusiast Meetup<br /> 222 Second St. LinkedIn</h2>
                     <h1 id="checkin-msg">ASK YOUR EVENT HOST FOR THE CHECK-IN CODE</h1>
 
                     <div className="row checkin-row">
                         <form action="">
-                            <input className="checkin-input" type="text"
+                            <input className="checkin-input" type="text" maxLength="1"
                             />
-                            <input className="checkin-input" type="text"
+                            <input className="checkin-input" type="text" maxLength="1"
                             />
-                            <input className="checkin-input" type="text"
+                            <input className="checkin-input" type="text" maxLength="1"
                             />
-                            <input className="checkin-input" type="text" name="value"
+                            <input className="checkin-input" type="text" name="value" maxLength="1"
                                 onChange={this.handleChange.bind(this)}
                             />
                             <br />
@@ -58,7 +58,7 @@ class CheckinPage extends React.Component {
                                     </span>
                                 </Link>
                                 <br />
-                                You're checked in. Click the thumb image to reveal your Match.
+                                You're checked in. Tap the thumb to reveal your Match.
                             </h2>
                         </form>
                     </div>
