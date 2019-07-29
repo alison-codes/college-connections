@@ -35,8 +35,13 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <h2 className="row Signup-nav"><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Log In</h2>
-
+        <div className="row Signup-nav">
+          <div className="col-6">
+            <h2><Link to='/'><img src={backArrow} alt="Back Arrow" /></Link> Log In</h2>
+          </div>
+          <div className="col-6">
+          </div>
+        </div>
         <h4 className="Signup-msg">Colorful college life starts here!</h4>
 
         <form onSubmit={this.handleSubmit}>
@@ -44,19 +49,19 @@ class LoginPage extends Component {
           <input placeholder="  username" value={this.state.displayName} type="text" id="displayName" name="displayName" onChange={this.handleChange} />
           <br />
           {/* <label htmlFor="password">Password: </label> */}
-          <input  placeholder="  password " value={this.state.password} type="password" id="password" name="password" onChange={this.handleChange} />
+          <input placeholder="  password " value={this.state.password} type="password" id="password" name="password" onChange={this.handleChange} />
           <br />
           <button className="Login-btn">Log In</button>
         </form>
         <p className="row Login-auth centered"> Or log in with </p>
-        <img src={linkedinImg} alt="LinkedIn" />  
-        <img src={instaImg} alt="Instagram" /> 
-        <img src={facebookImg} alt="Facebook" /> 
+        <img src={linkedinImg} alt="LinkedIn" />
+        <img src={instaImg} alt="Instagram" />
+        <img src={facebookImg} alt="Facebook" />
         <img src={twitterImg} alt="Twitter" />
 
         <p className="row Login-signuplink centered"> Don't have an account yet?</p>
 
-        <p className="row app-link centered"> <Link className="app-link"to='/signup'> Sign Up</Link></p>
+        <p className="row app-link centered"> <Link className="app-link" to='/signup'> Sign Up</Link></p>
       </div>
     );
   }
