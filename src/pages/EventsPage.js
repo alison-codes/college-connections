@@ -35,6 +35,9 @@ class EventsPage extends Component {
 
     return (
       <div className="Events">
+
+        <Link id="hidden-link" to='/checkin'><button>Secret</button></Link>
+
         <h5 className="rec-msg">
           <img src={logo} height="20px" alt="Logo" />&nbsp;
           Recommended events for you
@@ -42,7 +45,7 @@ class EventsPage extends Component {
         <div className="container">
           <div >
             {eventList}
-            <Confetti />
+
           </div>
         </div>
 
@@ -51,19 +54,5 @@ class EventsPage extends Component {
   };
 }
 
-const Confetti = () => {
-  React.useEffect(() => {
-    const confettiSettings = { target: 'my-canvas' };
-    const confetti = new ConfettiGenerator(confettiSettings);
-    confetti.render();
-    setTimeout(confetti.clear, 10000);
-    return () => confetti.clear();
-  }, [])
-  return (
-    <div className="confetti">
-      <canvas id="my-canvas"></canvas>
-    </div>
-  );
-};
 
 export default EventsPage;

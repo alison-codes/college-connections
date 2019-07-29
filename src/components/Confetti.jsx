@@ -15,7 +15,7 @@ const Confetti = (props) => {
     const confettiSettings = { target: `my-canvas${props.idx}` };
     const confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
-    setTimeout(confetti.clear, 10000);
+    setTimeout(confetti.clear, 2000);
     return () => confetti.clear();
   }, [])
   return (
