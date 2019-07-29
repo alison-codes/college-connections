@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import eventService from '../utils/eventService';
 import ConfettiGenerator from "confetti-js";
-import Button from 'react-bootstrap/Button';
 import Event from '../components/Event';
-
-
-import nextBlueArrow from '../images/nextarrowblue.svg';
-import handupImg from '../images/handup.png';
-import recicon from '../images/recicon.png';
-
+import logo from '../images/matchy_logo.svg';
 
 class EventsPage extends Component {
   state = {
@@ -19,14 +13,14 @@ class EventsPage extends Component {
   async componentDidMount() {
     this.props.handleUpdateEvents();
 
-      };
+  };
 
   handleReactionButtonClick = async e => {
     e.preventDefault();
-    
+
   };
 
-  
+
 
   handleRemoveReaction = async () => {
     await eventService.removeReaction(this.state);
@@ -41,10 +35,13 @@ class EventsPage extends Component {
       <Event key={idx} event={e} idx={idx} handleUpdateEvents={this.props.handleUpdateEvents} user={this.props.user} />
     ));
 
-    
+
     return (
       <div className="Events">
-        <h5 className="rec-msg">Recommended events for you</h5>
+        <h5 className="rec-msg">
+          <img src={logo} height="20px" alt="Logo" />&nbsp;
+          Recommended events for you
+        </h5>
         <div className="container">
           <div >
             {eventList}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect, } from "react-router-dom";
 
-
 class CheckinPage extends React.Component {
     state = {
         redirect: false,
@@ -41,10 +40,10 @@ class CheckinPage extends React.Component {
                                 onChange={this.handleChange}
                             />
                             <br /><br /><br />
-                            <h1
+                            <h3
                                 hidden={this.isFormInvalid()}>
                                 <span role="img" aria-label="thumbs up">👍</span>
-                                </h1>
+                                </h3>
                         </form>
                     </div>
                     <br />

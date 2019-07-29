@@ -444,17 +444,21 @@ div > h4{
   border-radius: 8px;
   border: #37AA85 solid 1px;
   color: #37AA85;
-  font-size: 21px;
+  font-size: 16px;
 }
 
-#interested-btn:hover {
+#interested-btn:focus {
+  background-color:  rgba(55, 170, 134, 1);
+  color: white;
+}
+
+#interested-btn:hover{
   background-color:  rgba(55, 170, 134, 0.7);
   width: 75px;
   height: 44px;
   border-radius: 8px;
   border: #37AA85 solid 1px;
   color: #fff;
-  font-size: 21px;
 }
 
 
@@ -468,6 +472,7 @@ div > h4{
   font-size: 14px;
   color: #222222;
   margin-top: 15px;
+  margin-bottom: -20px;
 }
 
 .event-name{
@@ -475,4 +480,11 @@ div > h4{
   color: #000000;
   letter-spacing: 0.4px;
   line-height: 18px;
+  text-align: left;
+  margin-left: -15px;
+}
+
+#headingOne > div > div.col-8 > div {
+  margin: 0px;
+
 }

@@ -42,7 +42,7 @@ class Event extends Component {
                 {this.props.event.startTime}
               </div>
               <div className="row event-row">
-                perks row
+                Perks:  <span role="img" aria-label="pizza">🍕</span> <span role="img" aria-label="shirt">👕</span>
               </div>
               <div className="row">
                 <button
