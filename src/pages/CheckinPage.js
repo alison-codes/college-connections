@@ -14,9 +14,12 @@ class CheckinPage extends React.Component {
         });
     };
 
+    isFormInvalid() {
+        return !(this.state.redirect);
+    }
+
     render() {
         const { redirect } = this.state;
-
         if (redirect) {
             return <Redirect to='/match' />;
         }
@@ -37,6 +40,11 @@ class CheckinPage extends React.Component {
                             <input className="checkin-input" type="text" name="redirect"
                                 onChange={this.handleChange}
                             />
+                            <br /><br /><br />
+                            <h1
+                                hidden={this.isFormInvalid()}>
+                                <span role="img" aria-label="thumbs up">👍</span>
+                                </h1>
                         </form>
                     </div>
                     <br />
