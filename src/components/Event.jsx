@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import handupImg from '../images/handup.png';
 import eventService from '../utils/eventService';
+import ConfettiGenerator from 'confetti-js';
 
 
 
@@ -12,6 +13,7 @@ class Event extends Component {
     e.preventDefault();
     await eventService.addReaction(this.props.event._id, this.props.user._id);
     this.props.handleUpdateEvents();
+    
   };
 
   render() {
@@ -71,6 +73,21 @@ class Event extends Component {
       </div>
     );
   }
+}
+
+const Confetti = () => {
+  React.useEffect(() => {
+    const confettiSettings = { target: 'my-canvas' };
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+    setTimeout(confetti.clear, 10000);
+    return () => confetti.clear();
+  }, [])
+  return (
+    <div className="confetti">
+      <canvas id="my-canvas"></canvas>
+    </div>
+  );
 }
 
 export default Event;
