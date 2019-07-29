@@ -28,6 +28,7 @@ async function login(req, res) {
 }
 
 async function signup(req, res) {
+  console.log(`req.body: ${req.body}`);
   const user = new User(req.body);
   try {
     await user.save();

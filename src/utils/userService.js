@@ -3,6 +3,7 @@ import tokenService from "./tokenService";
 const BASE_URL = "/api/users/";
 
 function signup(user) {
+  console.log(`user: ${user}`)
   return fetch(BASE_URL + "signup/", {
     method: "POST",
     headers: new Headers({
@@ -10,8 +11,7 @@ function signup(user) {
       "Authorization": "Bearer " + tokenService.getToken()
     }),
     body: JSON.stringify(user)
-  })
-    .then(res => {
+  }).then(res => {
       if (res.ok) return res.json();
       // duplicate username
       throw new Error("Username already taken");

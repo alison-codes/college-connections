@@ -20,7 +20,6 @@ const matchSchema = new Schema({
   users: [{
     type: Schema.Types.ObjectId,
     ref: "User",
-    unique: true,
     required: true
   }],
   color: {
@@ -43,13 +42,13 @@ const eventSchema = new Schema(
     },
     reactions: [reactionSchema],
     startTime: {
-      type: Date,
-      default: function() {
-        let d = new Date();
-        d.setDate(d.getDate() + 7);
-        return d;
-      }
-    },
+      type: String,
+      // default: function() {
+      //   let d = new Date();
+      //   d.setDate(d.getDate() + 7);
+      //   return d;
+      },
+    
     image: String,
     perks: [{
       type: String,
