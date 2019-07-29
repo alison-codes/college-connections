@@ -16,6 +16,7 @@ function detail(req, res) {
 }
 
 async function createEvent(req, res) {
+  console.log(`req.body: ${req.body}`);
   const event = new Event(req.body);
   try {
     await event.save();

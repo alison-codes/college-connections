@@ -41,27 +41,10 @@ const eventSchema = new Schema(
       type: String
     },
     reactions: [reactionSchema],
-    startTime: {
-      type: String,
-      // default: function() {
-      //   let d = new Date();
-      //   d.setDate(d.getDate() + 7);
-      //   return d;
-      },
-    
-    image: String,
-    perks: [{
-      type: String,
-      enum: ['F', 'G']
-    }],
-    matches: [matchSchema]
+
+    startTime: String,
   },
   { timestamps: true }
 );
-
-eventSchema.pre("save", function(next) {
-  //search through reactions array
-  //compare interest arrays of 
-});
 
 module.exports = mongoose.model("Event", eventSchema);
