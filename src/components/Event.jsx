@@ -3,17 +3,22 @@ import Button from 'react-bootstrap/Button';
 import handupImg from '../images/handup.png';
 import eventService from '../utils/eventService';
 import ConfettiGenerator from 'confetti-js';
+import Confetti from './Confetti';
 
 
 
 class Event extends Component {
-  state = {}
+  state = {
+    showConfetti: false
+  }
 
   handleAddReaction = async (e) => {
     e.preventDefault();
     await eventService.addReaction(this.props.event._id, this.props.user._id);
     this.props.handleUpdateEvents();
-    
+    this.setState({ 
+      showConfetti: !this.state.showConfetti
+    });
   };
 
   render() {
@@ -22,7 +27,7 @@ class Event extends Component {
 
         <div className="card-header" id="headingOne">
           <div className="row">
-            <div id={"event" + this.props.idx} class="col-4">
+            <div id={"event" + this.props.idx} className="col-4">
               <p> {this.props.event.startTime.toString().slice(5, 9)}<br /> {this.props.event.startTime.toString().slice(10, 13)}</p>
             </div>
             <div className="col-8">
@@ -35,6 +40,7 @@ class Event extends Component {
                     <input type="hidden" />
                     <Button id="interested-btn" onClick={this.handleAddReaction}>
                       <img height="21px" width="21px" src={handupImg} alt="I'm interested" /> {this.props.event.reactions.length}
+                      {(this.state.showConfetti) ? <Confetti idx={this.props.idx} /> : null } 
                     </Button>
                   </form>
                 </div>
@@ -73,21 +79,6 @@ class Event extends Component {
       </div>
     );
   }
-}
-
-const Confetti = () => {
-  React.useEffect(() => {
-    const confettiSettings = { target: 'my-canvas' };
-    const confetti = new ConfettiGenerator(confettiSettings);
-    confetti.render();
-    setTimeout(confetti.clear, 10000);
-    return () => confetti.clear();
-  }, [])
-  return (
-    <div className="confetti">
-      <canvas id="my-canvas"></canvas>
-    </div>
-  );
 }
 
 export default Event;
