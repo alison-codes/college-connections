@@ -31,6 +31,7 @@ class CheckinPage extends React.Component {
     render() {
 
         return (
+            <div className="fadeIn">
             <div className="landing-background">
                 <main id="color-background1">
                     <h2 id="checkin-greeting">Hackathon Enthusiast Meetup<br /> 222 Second St. LinkedIn</h2>
@@ -64,6 +65,7 @@ class CheckinPage extends React.Component {
                     </div>
                     <br />
                 </main>
+            </div>
             </div>
         );
     };
