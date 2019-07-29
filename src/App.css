@@ -11,7 +11,7 @@
 }
 
 .App-header {
-  background-color: #182131;
+  background-color: #1E2033;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ main {
 }
 
 footer {
-  background-color: #282c34;
+  background-color:  #1E2033;
   height: 25px;
   color: white;
 }
@@ -121,6 +121,10 @@ footer {
   letter-spacing: 0;
 }
 
+#login-arrow{
+  margin-top: 20px;
+}
+
 .column {
   flex: 50%;
   padding: 0 4px;
@@ -157,7 +161,6 @@ footer {
 div > button {
     border: none;
 }
-
 
 .app-link {
   color: green;
@@ -274,5 +277,122 @@ input:checked + .fancy-checkbox-img + img {
 }
 
 #interest1 {
-  width: 60%
+  width: 60%;
+}
+
+
+#color-background {
+  margin-top: -60px;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #37AA85
+}
+
+#matchy-greeting{
+  margin-top: 10vh;
+  font-size: 140px;
+  color: white;
+  font-weight: 900;
+
+}
+#matchy-number-msg{
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 25vh;
+  color: #FFFFFF;
+}
+
+#matchy-image{
+  margin-top: 20vh;
+}
+
+#color-background1 {
+  margin-top: -60px;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #37AA85
+}
+
+#matchy-greeting1{
+  margin-top: 10vh;
+  font-size: 140px;
+  color: white;
+  font-weight: 900;
+
+}
+#matchy-number-msg1{
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 25vh;
+  color: #FFFFFF;
+}
+
+#matchy-image1{
+  margin-top: 20vh;
+}
+
+#color-background2 {
+  margin-top: -60px;
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #FACC1F;
+}
+
+#matchy-greeting2{
+  margin-top: 10vh;
+  font-size: 140px;
+  color: black;
+  font-weight: 900;
+}
+
+#matchy-number-msg2{
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 25vh;
+  color: black;
+}
+
+#matchy-image2 {
+  margin-top: 20vh;
+}
+
+#checkin-msg {
+  font-size: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 3vh;
+  margin-bottom: 12vh;
+  color: #FFFFFF;
+}
+
+#checkin-greeting {
+  font-size: 24px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 15vh;
+  font-weight: 800;
+}
+
+
+.checkin-input {
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  height: 102px;
+  width: 72px;
+  font-size: 66px;
+  color: #1E2033;
+  letter-spacing: 0;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.checkin-row {
+  display: contents;
 }

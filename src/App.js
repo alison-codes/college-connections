@@ -12,6 +12,8 @@ import {
 import userService from "./utils/userService";
 import LoginPage from "./pages/LoginPage";
 import EventsPage from "./pages/EventsPage";
+import MatchPage from "./pages/MatchPage";
+import CheckinPage from "./pages/CheckinPage";
 import LandingPage from "./pages/LandingPage";
 import eventService from "./utils/eventService";
 
@@ -95,9 +97,28 @@ class App extends Component {
               )}
             />
             
+            <Route
+              exact
+              path="/match"
+              render={props => (
+                <MatchPage
+                />
+              )}
+            />
+
+            <Route
+              exact
+              path="/checkin"
+              render={props => (
+                <CheckinPage
+                
+                />
+              )}
+            />
+
           </Switch>
         </main>
-        <footer className="Footer">Made with <span role="img" aria-label="heart">💙</span> for LNKD by Macie, Ali, Chris, and Yang x 2</footer>
+        <footer className="Footer">Made with <span role="img" aria-label="heart">💙</span> for LinkedIn</footer>
       </div>
     );
   }

@@ -10,18 +10,18 @@ import userService from '../utils/userService';
 import nextYellowArrow from '../images/nextbuttonyellow.svg';
 import nextBlueArrow from '../images/nextarrowblue.svg';
 import backArrow from '../images/backarrow.svg';
-
 import interest1 from '../images/Gaming.png';
 import interest2 from '../images/LGBT.png';
-import interest3 from '../images/Gig.png';
+import interest3 from '../images/Film.png';
 import interest4 from '../images/Tech.png';
-import interest5 from '../images/Painting.png';
-import interest6 from '../images/Football.png';
+import interest5 from '../images/Crafts.png';
+import interest6 from '../images/Soccer.png';
 import interest7 from '../images/Reading.png';
-import interest8 from '../images/backarrow.svg';
-import { optionalCallExpression } from '@babel/types';
-import tokenService from '../utils/tokenService';
+import interest8 from '../images/PublicSpeaking.png';
+import interest9 from '../images/Outdoor.png';
+import interest10 from '../images/Gig.png';
 
+import tokenService from '../utils/tokenService';
 
 
 var Filter = require('bad-words'),
@@ -321,7 +321,7 @@ class SignupPage extends React.Component {
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={"soccer"} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
-                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                          <img id="interest1" className="interstImg" src={interest1} alt="User interest" />
                         </label>
                       </div>
                     </div>
@@ -341,7 +341,7 @@ class SignupPage extends React.Component {
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={3} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
-                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                          <img id="interest1" className="interstImg" src={interest3} alt="User interest" />
                         </label>
                       </div>
                     </div>
@@ -351,10 +351,20 @@ class SignupPage extends React.Component {
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={"Tech"} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
-                          <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
+                          <img id="interest1" className="interstImg" src={interest5} alt="User interest" />
                         </label>
                       </div>
                     </div>
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={"Tech"} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest9} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+
 
                   </div>
                   <div className="column">
@@ -363,7 +373,7 @@ class SignupPage extends React.Component {
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={1} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
-                          <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
+                          <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
                         </label>
                       </div>
                     </div>
@@ -373,7 +383,7 @@ class SignupPage extends React.Component {
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={2} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
-                          <img id="interest1" className="interstImg" src={interest2} alt="User interest" />
+                          <img id="interest1" className="interstImg" src={interest7} alt="User interest" />
                         </label>
                       </div>
                     </div>
@@ -383,17 +393,25 @@ class SignupPage extends React.Component {
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={3} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
+                          <img id="interest1" className="interstImg" src={interest8} alt="User interest" />
+                        </label>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="input-group">
+                        <label className="fancy-checkbox-label">
+                          <input type="checkbox" value={"Tech"} onChange={this.handleCheckboxChange.bind(this)} />
+                          <span className="fancy-checkbox fancy-checkbox-img"></span>
                           <img id="interest1" className="interstImg" src={interest6} alt="User interest" />
                         </label>
                       </div>
                     </div>
-
                     <div className="row">
                       <div className="input-group">
                         <label className="fancy-checkbox-label">
                           <input type="checkbox" value={4} onChange={this.handleCheckboxChange.bind(this)} />
                           <span className="fancy-checkbox fancy-checkbox-img"></span>
-                          <img id="interest1" className="interstImg" src={interest4} alt="User interest" />
+                          <img id="interest1" className="interstImg" src={interest10} alt="User interest" />
                         </label>
                       </div>
                     </div>
@@ -501,5 +519,3 @@ const Feedback = {
 };
 
 export default SignupPage;
-
-{/* <Link id="int-arrow" to='/events'>  <img src={nextBlueArrow} alt="Submit arrow" /> </Link> */ }
