@@ -8,6 +8,7 @@ import Event from '../components/Event';
 
 import nextBlueArrow from '../images/nextarrowblue.svg';
 import handupImg from '../images/handup.png';
+import recicon from '../images/recicon.png';
 
 
 class EventsPage extends Component {
@@ -43,6 +44,7 @@ class EventsPage extends Component {
     
     return (
       <div className="Events">
+        <h5 className="rec-msg">Recommended events for you</h5>
         <div className="container">
           <div >
             {eventList}
