@@ -52,9 +52,10 @@ class Event extends Component {
               <div className="row event-row">
                 Perks:  <span role="img" aria-label="pizza">🍕</span> <span role="img" aria-label="shirt">👕</span>
               </div>
-              <div className="row">
+              <div className="row mt-3">
+                <div className="col-8"></div>
                 <button
-                  className="more-btn"
+                  className="more-btn col-4"
                   type="button"
                   data-toggle="collapse"
                   data-target={"#e" + this.props.idx}
