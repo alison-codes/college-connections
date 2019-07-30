@@ -8,7 +8,7 @@ Matchy is the winner of LinkedIn's 2019 Hack for Economic Opportunity, taking ho
 
 ![Matchy3](https://i.imgur.com/STcWMzn.jpg)
 
-You can access a demo of Matchy product by [clicking here](https://college-connections.herokuapp.com/). 
+You can access a demo of Matchy by [clicking here](https://college-connections.herokuapp.com/). 
 
 ## Engineering Team Members
 - [Alison Norris](https://github.com/alison-codes)
