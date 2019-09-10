@@ -17,7 +17,7 @@ const Confetti = (props) => {
     confetti.render();
     setTimeout(confetti.clear, 2000);
     return () => confetti.clear();
-  }, [])
+  })
   return (
     <div style={style} className="confetti">
       <canvas id={`my-canvas${props.idx}`} style={style}></canvas>

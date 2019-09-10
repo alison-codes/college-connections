@@ -23,6 +23,15 @@
   color: white;
 }
 
+#my-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100vh;
+}
+
 
 main {
   min-height: calc(100vh - 85px);
@@ -103,6 +112,9 @@ footer {
   margin-bottom: 82px;
 }
 
+#matchy-landing {
+  margin-top: 5vh;
+}
 
 .Login-btn:hover{
   background: rgb(69, 104, 192);
@@ -112,6 +124,14 @@ footer {
   font-size: 16px;
   color: #777777;
   letter-spacing: 0;
+}
+
+.landing-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
 }
 
 .Login-signuplink {
@@ -385,16 +405,10 @@ input:checked + .fancy-checkbox-img + img {
 }
 
 #logo-landing{
-  position: absolute;
-  margin: 200px 0px 0px -100px;
 }
 
-
 #matchy-landing{
-  position: absolute;
-  align-self: center;
-  margin-top: 500px;
-  margin-left: 40%;
+  margin-top: 5vh;
 }
 
 .thumbsup-msg {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import eventService from '../utils/eventService';
-import ConfettiGenerator from "confetti-js";
+// import ConfettiGenerator from "confetti-js";
 import Event from '../components/Event';
 import logo from '../images/matchy_logo.svg';
 
