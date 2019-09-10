@@ -405,8 +405,10 @@ input:checked + .fancy-checkbox-img + img {
 }
 
 #logo-landing{
-  margin-top: 5vh;
+}
 
+#matchy-landing{
+  margin-top: 5vh;
 }
 
 .thumbsup-msg {
@@ -424,8 +426,8 @@ input:checked + .fancy-checkbox-img + img {
   height: 175px;
   margin-top:-12px;
   color: white;
-  border-top-left-radius: 29px;  
-  border-bottom-left-radius:  29px;  
+  border-top-left-radius: 20px;  
+  border-bottom-left-radius:  20px;  
 }
 
 #event0 {
@@ -437,7 +439,7 @@ input:checked + .fancy-checkbox-img + img {
 }
 
 #event2 {
-  background-color: #1E2033;
+  background-color: #FACC1F;
 }
 
 #event3 {
@@ -511,6 +513,30 @@ div > h4{
 
 #headingOne > div > div.col-8 > div {
   margin: 0px;
-
 }
 
+
+
+#hidden-link > button {
+  position: fixed;
+  top: 8;
+  left: 0;
+  color: white;
+  border: none;
+  background-color: white;
+}
+
+.fadeIn{
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    background-color: black;
+    opacity: 0;
+  }
+  to {
+    /* background-color: white; */
+    opacity: 1;
+  }
+}

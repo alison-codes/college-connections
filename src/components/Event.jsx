@@ -5,6 +5,7 @@ import eventService from '../utils/eventService';
 // import ConfettiGenerator from 'confetti-js';
 import Confetti from './Confetti';
 
+// import linkedinImg from '../images/linkedin.svg';
 
 
 class Event extends Component {
@@ -50,7 +51,8 @@ class Event extends Component {
                 {this.props.event.startTime}
               </div>
               <div className="row event-row">
-                Perks:  <span role="img" aria-label="pizza">🍕</span> <span role="img" aria-label="shirt">👕</span>
+                Perks:  <span role="img" aria-label="pizza">🍕</span> <span role="img" aria-label="shirt">👕</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sponser: 
+                LinkedIn
               </div>
               <div className="row mt-3">
                 <div className="col-8"></div>
