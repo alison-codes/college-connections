@@ -8,7 +8,7 @@ const Confetti = (props) => {
     confetti.render();
     setTimeout(confetti.clear, 10000);
     return () => confetti.clear();
-  }, [])
+  })
   return (
     <div className="confetti">
       <canvas id={`my-canvas${props.idx}`}></canvas>

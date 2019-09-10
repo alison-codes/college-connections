@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import eventService from '../utils/eventService';
 import ConfettiGenerator from "confetti-js";
 import Event from '../components/Event';

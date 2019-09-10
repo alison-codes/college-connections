@@ -16,9 +16,11 @@ const LandingPage = (props) => {
     return (
         <div className="landing-background">
       
-            <section>
+            <section className="landing-flex">
                 <Link to='/events' className='NavBar-link'>  
-                <img id="logo-landing" src={logo} height="250px" alt="Logo" /> </Link>
+                    <img id="logo-landing" src={logo} height="250px" alt="Logo" /> 
+                </Link>
+                <h1 id="matchy-landing">Matchy</h1>
             </section>
             <canvas id="my-canvas"></canvas>
         </div>

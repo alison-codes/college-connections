@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import handupImg from '../images/handup.png';
 import eventService from '../utils/eventService';
-import ConfettiGenerator from 'confetti-js';
+// import ConfettiGenerator from 'confetti-js';
 import Confetti from './Confetti';
 
 
